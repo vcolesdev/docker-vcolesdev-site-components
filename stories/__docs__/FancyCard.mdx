@@ -1,0 +1,38 @@
+{/* FancyCard.mdx */}
+
+import { Canvas, Controls, Heading, Meta, Subtitle, Title } from "@storybook/blocks";
+
+import * as FancyCardStories from "../FancyCard/FancyCard.stories.tsx";
+
+<Meta of={FancyCardStories} />
+
+<Title>Fancy Card</Title>
+
+<Subtitle>Components/FancyCard</Subtitle>
+
+(AI Generated Text): Fancy card is a component that displays a card that displays information.
+
+## Playground (Default)
+
+<Canvas of={FancyCardStories.Default} withToolbar />
+<Controls of={FancyCardStories.Default} />
+
+## Stories
+
+A list of stories demonstrating how to use the `<FancyCard>` component.
+
+### Default
+
+<Canvas of={FancyCardStories.Default} />
+
+### Example - With Title
+
+<Canvas of={FancyCardStories.CardWithTitle} />
+
+### Example - With Footer
+
+<Canvas of={FancyCardStories.CardWithFooter} />
+
+### Example - With Header and Footer
+
+<Canvas of={FancyCardStories.CardWithHeaderAndFooter} />

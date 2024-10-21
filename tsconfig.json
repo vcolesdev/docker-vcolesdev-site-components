@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    /* Alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [".*"],
+      "@/docs/*": ["stories/__docs__/*"],
+      "@/sbconfig/*": [".storybook/*"],
+      "@/src/*": ["src/*"],
+      "@/stories/*": ["stories/*"],
+    },
+    "jsx": "preserve"
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

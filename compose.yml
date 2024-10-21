@@ -1,0 +1,6 @@
+services:
+  storybook:
+    build:
+      dockerfile: .docker/Dockerfile
+    ports:
+      - ${SB_HOST_PORT}:${SB_CONTAINER_PORT}

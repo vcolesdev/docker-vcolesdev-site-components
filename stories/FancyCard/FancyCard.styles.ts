@@ -1,0 +1,38 @@
+import { cn } from "@/src/utils/cn";
+
+export const FANCY_CARD_STYLES = {
+  element: cn([
+    "group/fancy-card",
+    "flex",
+    "flex-col",
+    "justify-between",
+    "py-8",
+    "px-8",
+    "text-tree-bark",
+    "bg-light--elevated",
+    "border-[1.5px]",
+    "border-transparent",
+    "rounded-lg",
+    "scale-[100%]",
+    "shadow-none",
+    "transition-all",
+    "duration-300",
+    "ease-in-out-cubic",
+    "hover:bg-white",
+    "hover:scale-[102%]",
+    "hover:shadow-xl",
+    "hover:shadow-theme-light",
+    "dark:text-baby-blue",
+    "dark:border-transparent",
+    "dark:bg-dark--elevated",
+    "dark:hover:border-[#325868]",
+    "dark:hover:bg-[#274451]",
+    "dark:hover:text-white",
+    "dark:hover:shadow-theme-dark",
+  ]),
+  shadow: {
+    shared: cn(["shadow-md"]),
+    dark: cn([""]),
+    light: cn([""]),
+  },
+};

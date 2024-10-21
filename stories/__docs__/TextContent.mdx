@@ -1,0 +1,38 @@
+{/* TextContent.mdx */}
+
+import { Canvas, Controls, Heading, Meta, Subtitle, Title } from "@storybook/blocks";
+
+import * as TextContentStories from "../TextContent/TextContent.stories.tsx";
+
+<Meta of={TextContentStories} />
+
+<Title>TextContent</Title>
+
+<Subtitle>Text/TextContent</Subtitle>
+
+(AI Generated Text): Text content is a component that displays text.
+
+## Playground (Default)
+
+<Canvas of={TextContentStories.Default} withToolbar />
+<Controls of={TextContentStories.Default} />
+
+## Stories
+
+A list of stories demonstrating how to use the `<TextContent>` component.
+
+### Small
+
+<Canvas of={TextContentStories.Small} />
+
+### Large
+
+<Canvas of={TextContentStories.Large} />
+
+### ExtraLarge
+
+<Canvas of={TextContentStories.ExtraLarge} />
+
+### 2XLarge
+
+<Canvas of={TextContentStories.TwoXLarge} />

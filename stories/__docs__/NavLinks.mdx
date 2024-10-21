@@ -1,0 +1,34 @@
+{/* NavLinks.mdx */}
+
+import { Canvas, Controls, Meta, Subtitle, Title } from "@storybook/blocks";
+
+import * as NavLinksStories from "../NavLinks/NavLinks.stories.tsx";
+
+<Meta of={NavLinksStories} />
+
+<Title>NavLinks</Title>
+
+<Subtitle>Components/NavLinks</Subtitle>
+
+(AI Generated Text): NavLinks is a `<nav>` component that displays a list of links.
+
+## Playground
+
+<Canvas of={NavLinksStories.Playground} withToolbar />
+<Controls of={NavLinksStories.Playground} />
+
+## Stories
+
+A list of stories that demonstrate the different ways to use the `<NavLinks>` component.
+
+### NavLinks With Span
+
+<Canvas of={NavLinksStories.NavLinksWithSpan} />
+
+### NavLinks With Array
+
+<Canvas of={NavLinksStories.NavLinksWithArray} />
+
+### NavLinks with String
+
+<Canvas of={NavLinksStories.NavLinksWithString} />

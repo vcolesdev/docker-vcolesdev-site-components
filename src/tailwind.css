@@ -1,0 +1,122 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+/* TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables */
+@layer base {
+  :root {
+    --font-body: "Reddit Sans";
+    --font-button: "Reddit Sans", sans-serif;
+    --font-heading: "Anek Tamil", sans-serif;
+    --font-cursive: "Playwrite AU NSW", cursive, serif;
+
+    /* Colors */
+    --color-white: rgba(255, 255, 255);
+    --color-black: rgba(30, 28, 26);
+    --color-nuetral: rgb(218, 221, 224);
+    --color-melon: rgb(233, 117, 93);
+    --color-baby-pink: rgb(255, 246, 244);
+    --color-rose: rgb(244, 63, 94);
+    --color-rose-dark: rgb(222, 39, 70);
+    --color-sky: rgb(209, 222, 229);
+    --color-baby-blue: rgb(163, 188, 202);
+    --color-charcoal-blue: rgb(32, 48, 56);
+    --color-freshwater-blue: rgb(117, 155, 176);
+    --color-deep-brown: rgb(81, 51, 46);
+    --color-tree-bark: rgb(93, 69, 64);
+
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-destructive: #f43f5e;
+
+    /* Gradient stops */
+    --gradient-primary-start: rgba(233, 117, 93, 0);
+    --gradient-primary-end: rgba(231, 70, 40, 0.3);
+    --gradient-primary--dark-start: rgba(244, 63, 94, 0);
+    --gradient-primary--dark-end: rgb(222, 39, 70);
+
+    /* BG Colors */
+    --bg-color: rgb(250, 224, 219);
+    --bg-color--elevated: var(--color-baby-pink);
+    --bg-color--dark: rgb(22, 32, 38);
+    --bg-color--dark-elevated: var(--color-charcoal-blue);
+
+    /* Text Colors */
+    --text-color: var(--color-tree-bark);
+    --text-color--muted: #6f615d;
+    --text-color--dark: var(--color-baby-blue);
+    --text-color--dark-muted: #7d969f;
+
+    /* Intro Colors */
+    --color-site-intro: rgba(81, 51, 46, 0.85);
+    --color-site-intro--dark: rgba(117, 155, 176, 0.9);
+
+    /* Heading Colors */
+    --color-heading: var(--color-deep-brown);
+    --color-heading--dark: var(--color-sky);
+
+    /* Heading Subtitle Colors */
+    --color-heading-subtitle: var(--color-tree-bark);
+    --color-heading-subtitle--dark: var(--color-freshwater-blue);
+
+    /* Action Colors */
+    --color-action-primary: var(--color-melon);
+    --color-action-primary--dark: var(--color-rose);
+
+    /* Text Sizes */
+    --text-size-base: 1rem; /* 16px */
+    --text-size-sm: 0.875rem; /* 14px */
+    --text-size-lg: 1.125rem; /* 18px */
+    --text-size-xl: 1.25rem; /* 20px */
+    --text-size-huge: 3rem; /* 48px */
+    --text-size-jumbo: 3.75rem; /* 60px */
+
+    /* Font Sizes */
+    --font-size-body: var(--text-size-base);
+    --font-size-intro-heading: var(--text-size-xl);
+    --font-size-intro-text: var(--text-size-jumbo);
+    --font-size-featured-heading: var(--text-size-huge);
+    --font-size-featured-text: var(--text-size-xl);
+    --font-size-button: 17px;
+
+    /* Border Radius */
+    --border-radius-sm: .25rem; /* 4px */
+    --border-radius-md: .5rem; /* 8px */
+    --border-radius-lg: .75rem; /* 12px */
+    --border-radius-xl: 1.5rem; /* 24px */
+    --border-radius-2xl: 2rem; /* 32px */
+
+    --border-radius-icon: var(--border-radius-md);
+    --border-radius-button: var(--border-radius-lg);
+    --border-radius-featured-post: var(--border-radius-xl);
+    --border-radius-featured-image: var(--border-radius-2xl);
+
+    /* Border Width */
+    --border-width-button: "1.5px";
+  }
+}
+
+/* Base styles */
+@layer base {
+  body {
+    color: var(--color-deep-brown);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .dark {
+    body {
+      color: var(--color-baby-blue);
+    }
+  }
+}
+
+*:focus {
+  @apply focus:outline-none focus:ring-[2px] focus:ring-[#fc988d] focus:ring-offset-[3px] focus:ring-offset-[#FAE0DB] dark:focus:ring-freshwater-blue dark:focus:ring-offset-[#162025] transition duration-500 ease-in-out-cubic;
+}

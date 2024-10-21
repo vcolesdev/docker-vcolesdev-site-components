@@ -1,0 +1,38 @@
+{/* Eyebrow.mdx */}
+
+import { Canvas, Controls, Heading, Meta, Subtitle, Title } from "@storybook/blocks";
+
+import * as EyebrowStories from "../Eyebrow/Eyebrow.stories.tsx";
+
+<Meta of={EyebrowStories} />
+
+<Title>Eyebrow</Title>
+
+<Subtitle>Text/Eyebrow</Subtitle>
+
+(AI Generated Text): Eyebrow is a component that displays a short piece of text.
+
+## Playground (Default)
+
+<Canvas of={EyebrowStories.Playground} withToolbar />
+<Controls of={EyebrowStories.Default} />
+
+## Stories
+
+A list of stories demonstrating how to use the `<Eyebrow>` component.
+
+### Example - Default
+
+<Canvas of={EyebrowStories.Default} />
+
+### Example - Icon Start
+
+<Canvas of={EyebrowStories.IconStart} />
+
+### Example - Icon End
+
+<Canvas of={EyebrowStories.IconEnd} />
+
+### Example - Icon Only
+
+<Canvas of={EyebrowStories.IconOnly} />

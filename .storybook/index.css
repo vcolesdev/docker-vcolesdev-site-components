@@ -1,0 +1,12 @@
+.docs-story {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Dark */
+.dark {
+  .docs-story {
+    background-color: var(--bg-color--dark);
+    color: var(--text-color--dark);
+  }
+}

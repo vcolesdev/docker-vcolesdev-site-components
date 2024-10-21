@@ -1,0 +1,28 @@
+import { Canvas, Controls, Heading, Meta, Subtitle, Title } from "@storybook/blocks";
+
+import * as NavLinkStories from "../NavLink/NavLink.stories.tsx";
+
+<Meta of={NavLinkStories} />
+
+<Title>NavLinks</Title>
+
+<Subtitle>Components/NavLink</Subtitle>
+
+(AI Generated Text): NavLink is a `<a>` component that displays a link wrapped with an `<li>` component.
+
+## Playground
+
+<Canvas of={NavLinkStories.Playground} withToolbar />
+<Controls of={NavLinkStories.Playground} />
+
+## Stories
+
+A list of stories that demonstrate the different ways to use the `<NavLink>` component.
+
+### Inactive Link
+
+<Canvas of={NavLinkStories.InactiveLink} />
+
+### Active Link
+
+<Canvas of={NavLinkStories.ActiveLink} />
