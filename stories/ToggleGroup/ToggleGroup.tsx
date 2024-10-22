@@ -13,7 +13,7 @@ type ToggleButtonBaseApi = {
 type ToggleButtonApi = ToggleButtonBaseApi & Omit<ComponentPropsWithRef<"button">, keyof ToggleButtonBaseApi>;
 
 const BASE_CLASSES = cn([
-  "px-4",
+  "px-3",
   "py-3",
   "text-sm",
   "font-semibold",

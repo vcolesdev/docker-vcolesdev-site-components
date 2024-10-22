@@ -1,8 +1,7 @@
-import * as React from "react";
-import { ForwardedRef, forwardRef, useEffect, useState } from "react";
-
 import { cn } from "@/src/utils/cn";
 import { NavLink } from "@/stories/NavLink/NavLink";
+import * as React from "react";
+import { ForwardedRef, forwardRef, useEffect, useState } from "react";
 
 interface NavLinksApi {
   hasSpan?: boolean;
@@ -27,7 +26,13 @@ const NavLinks = forwardRef(function NavLinks({ ...props }: NavLinksApi, ref: Fo
     // Check if navLinks is an array
     return Array.isArray(navLinks) ? (
       navLinks.map((item, index) => (
-        <NavLink hasSpan={hasSpan} href={item} itemId={`navItem${item}`} itemLabel={`Nav Item ${item}`}>
+        <NavLink
+          key={`item-${index}`}
+          hasSpan={hasSpan}
+          href={item}
+          itemId={`navItem${item}`}
+          itemLabel={`Nav Item ${item}`}
+        >
           {item}
         </NavLink>
       ))

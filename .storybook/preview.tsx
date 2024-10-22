@@ -1,5 +1,6 @@
 import { Preview } from "@storybook/react";
 
+import "../src/gsap";
 import "../src/tailwind.css";
 import decorators from "./app/decorators";
 import parameters from "./app/parameters";

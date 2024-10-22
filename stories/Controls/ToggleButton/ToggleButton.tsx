@@ -9,7 +9,7 @@ interface ToggleButtonApi {
     selected: React.ReactNode | React.ReactNode[] | string;
     unselected: React.ReactNode | React.ReactNode[] | string;
   };
-  data: Record<string, unknown>;
+  data?: Record<string, unknown>;
   disabled?: boolean;
   id?: string;
   isSelected?: boolean;

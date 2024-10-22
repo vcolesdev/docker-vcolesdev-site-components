@@ -51,6 +51,8 @@ const themeBgColors = {
   "light--elevated": "var(--bg-color--elevated)",
   dark: "var(--bg-color--dark)",
   "dark--elevated": "var(--bg-color--dark-elevated)",
+  spotlight: "var(--bg-color--elevated)",
+  "spotlight-dark": "var(--bg-color--dark-elevated)",
 };
 
 const themeGradientColorStops = {

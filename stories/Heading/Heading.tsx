@@ -14,7 +14,7 @@ interface HeadingApi {
 }
 
 const HEADING_STYLES = {
-  element: cn(["relative", "font-heading", "leading-none", "text-inherit", "dark:text-inherit"]),
+  element: cn(["relative", "font-heading", "leading-none", "text-deep-brown", "dark:text-sky"]),
 };
 
 const HEADING_SIZES = {
@@ -22,7 +22,19 @@ const HEADING_SIZES = {
   sm: cn(["left-[-1px]", "my-0", "text-[24px]", "font-bold", "tracking-tight"]),
   md: cn(["left-[-2px]", "my-0", "text-[32px]", "font-bold", "tracking-tight"]),
   lg: cn(["left-[-2px]", "my-0", "text-[48px]", "font-bold", "tracking-tight"]),
-  xl: cn(["left-[-3px]", "my-0", "text-[60px]", "font-bold", "tracking-tight"]),
+  xl: cn([
+    "left-[-3px]",
+    "my-0",
+    "text-[36px]",
+    "md:text-[48px]",
+    "md:text-[54px]",
+    "xl:text-[60px]",
+    "font-bold",
+    "tracking-tight",
+    "transition",
+    "duration-200",
+    "ease-in-out-cubic",
+  ]),
 };
 
 const Heading = forwardRef(function Heading({ ...props }: HeadingApi, ref: ForwardedRef<HTMLHeadingElement>) {

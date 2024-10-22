@@ -33,7 +33,7 @@ const NAV_ITEM_SPAN_STYLES = {
 };
 
 const NAV_LINK_STYLES = {
-  element: cn(["block", "font-body", "font-semibold", "transition", "duration-300", "ease-in-out-cubic"]),
+  element: cn(["block", "font-body", "font-semibold", "transition", "delay-50", "duration-300", "ease-in-out-cubic"]),
   inactive: cn(["text-body-color", "dark:text-body-color--dark"]),
   active: cn(["text-melon", "dark:text-rose"]),
 };

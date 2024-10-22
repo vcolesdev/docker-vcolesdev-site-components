@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [".*"],
+      "@/assets/*": ["src/assets/*"],
       "@/docs/*": ["stories/__docs__/*"],
       "@/sbconfig/*": [".storybook/*"],
       "@/src/*": ["src/*"],

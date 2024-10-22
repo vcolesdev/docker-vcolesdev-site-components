@@ -1,7 +1,6 @@
+import { cn } from "@/src/utils/cn";
 import * as React from "react";
 import { CSSProperties, ForwardedRef, forwardRef, useEffect, useState } from "react";
-
-import { cn } from "@/src/utils/cn";
 
 type TextElement = HTMLParagraphElement | HTMLHeadingElement | HTMLSpanElement;
 type TextHtmlElement = "p" | "span" | "div";
@@ -9,12 +8,13 @@ type TextHtmlElement = "p" | "span" | "div";
 interface TextContentApi {
   children: React.ReactNode | React.ReactNode[] | string;
   element?: "p" | "span" | "div";
+  extraClasses?: string;
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
   styles?: React.CSSProperties;
 }
 
 const TEXT_STYLES = {
-  element: cn(["font-body", "text-inherit", "dark:text-inherit"]),
+  element: cn(["font-body", "text-tree-bark", "dark:text-baby-blue"]),
 };
 
 const TEXT_SIZES = {
@@ -22,11 +22,11 @@ const TEXT_SIZES = {
   md: cn(["text-base", "tracking-normal", "leading-relaxed"]),
   lg: cn(["text-base", "tracking-normal", "leading-relaxed", "md:text-lg"]),
   xl: cn(["text-base", "tracking-tight", "leading-relaxed", "md:text-lg", "lg:text-xl"]),
-  "2xl": cn(["text-lg", "tracking-tight", "lg:text-xl", "xl:text-[24px]", "xl:leading-10"]),
+  "2xl": cn(["text-lg", "font-light", "tracking-tight", "leading-8", "lg:text-xl", "xl:text-[24px]", "xl:leading-10"]),
 };
 
 const TextContent = forwardRef(function TextContent({ ...props }: TextContentApi, ref: ForwardedRef<TextElement>) {
-  const { element, size, styles } = props;
+  const { element, extraClasses, size, styles } = props;
 
   const [htmlElem, setHtmlElem] = useState<TextHtmlElement>("p");
   const [sizeStyles, setSizeStyles] = useState(TEXT_SIZES["md"]);
@@ -58,7 +58,7 @@ const TextContent = forwardRef(function TextContent({ ...props }: TextContentApi
   return (
     <>
       {React.createElement(htmlElem || "p", {
-        className: `${TEXT_STYLES["element"]} ${sizeStyles}`,
+        className: `${TEXT_STYLES["element"]} ${sizeStyles} ${extraClasses}`,
         style: { ...customStyles },
         ...props,
         ref,
