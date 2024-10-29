@@ -16,10 +16,11 @@ function PageSubheadingContainer({ children }: PageSubheadingContainerApi) {
 const HEADING_STYLES = {
   element: cn([
     "text-[32px]",
-    "font-heading",
+    "font-body",
     "font-semibold",
     "tracking-tight",
     "text-tree-bark",
+    "leading-none",
     "dark:text-freshwater-blue",
   ]),
 };

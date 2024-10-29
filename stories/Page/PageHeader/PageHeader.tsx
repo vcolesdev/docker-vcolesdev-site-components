@@ -19,15 +19,15 @@ interface PageTitleSlotApi {
 
 function PageHeaderContainer({ children }: PageHeaderContainerApi) {
   return (
-    <div className="space-y-4">
+    <div className="max-w-6xl mt-8 mx-auto w-full space-y-4">
       {children}
-      <Spacer size="xl" />
+      <Spacer size="lg" />
     </div>
   );
 }
 
 function PageTitleSlot({ children }: PageTitleSlotApi) {
-  return <div className="mb-2">{children}</div>;
+  return <div className="mb-6">{children}</div>;
 }
 
 function PageHeader(props: PageHeaderApi) {

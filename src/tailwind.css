@@ -18,8 +18,8 @@
     --font-cursive: "Playwrite AU NSW", cursive, serif;
 
     /* Colors */
-    --color-white: rgba(255, 255, 255);
-    --color-black: rgba(30, 28, 26);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(30, 28, 26);
     --color-nuetral: rgb(218, 221, 224);
     --color-melon: rgb(233, 117, 93);
     --color-baby-pink: rgb(255, 246, 244);

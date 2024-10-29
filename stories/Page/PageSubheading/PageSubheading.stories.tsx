@@ -4,7 +4,7 @@ import { PageSubheading } from "./PageSubheading";
 
 const meta: Meta<typeof PageSubheading> = {
   component: PageSubheading,
-  title: "Text/PageSubheading",
+  title: "Page/PageSubheading",
   args: {
     children: "This is a Page Subheading",
   },

@@ -7,7 +7,9 @@ interface PageTitleApi {
 function PageTitle({ children }: PageTitleApi) {
   return (
     <div>
-      <h2 className="text-[48px] font-heading font-bold tracking-tight text-tree-bark dark:text-sky">{children}</h2>
+      <h2 className="text-[48px] font-heading font-bold tracking-tight text-tree-bark dark:text-sky leading-none">
+        {children}
+      </h2>
     </div>
   );
 }

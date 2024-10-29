@@ -1,6 +1,8 @@
-# Docker Storybook
+# Docker Storybook for https://vcoles.me
 
-A personal project of mine. 💜
+A personal project of mine. 💜 
+
+You can visit http://vcoles.me to view more of my work.  This project is a Dockerized Storybook application that showcases the components used on my personal site.  The plan is to replace all current components with these for better organization and maintainability. 
 
 ## Description
 

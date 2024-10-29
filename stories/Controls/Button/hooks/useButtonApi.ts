@@ -6,50 +6,46 @@ import { cn } from "@/src/utils/cn";
 import { useMuiBaseButton } from "./useMuiBaseButton";
 
 const API = buttonApi;
+const buttonTypes = ["primary", "secondary", "ghost", "outlined"];
+const buttonSizes = ["sm", "md", "lg", "xl"];
+
+function useHandleBtnCases({
+  cases,
+  currValue,
+  values,
+}: {
+  cases: string[];
+  currValue: any;
+  values: Record<any, any>;
+}) {
+  return handlePropCases({ cases, currValue, values });
+}
 
 function useButtonApi(props: ButtonProps) {
-  const { extraClasses, size, removeClasses, variant } = props;
+  const { extraClasses, size, variant } = props;
   const { buttonStyles } = useMuiBaseButton();
 
-  const [btnBackdropVariantStyles, setBtnBackdropStyles] = useState(null);
-  const [btnVariantStyles, setBtnVariantStyles] = useState(API.styles.default);
-  const [btnSizeStyles, setBtnSizeStyles] = useState(API.sizes.md);
+  const [btnVariant, setBtnVariant] = useState(API.styles.default);
+  const [btnSize, setBtnSize] = useState(API.sizes.md);
   const [btnExtraClasses, setBtnExtraClasses] = useState("");
-  const [btnRemoveClasses, setBtnRemoveClasses] = useState<string[] | null>(null);
 
-  const [filteredBtnClasses, setFilteredClasses] = useState<string>("");
+  const buttonClasses = cn([buttonStyles, btnVariant, btnSize, btnExtraClasses]);
 
-  const buttonClasses = cn([buttonStyles, btnVariantStyles, btnSizeStyles, extraClasses]);
+  const handleVariant = useHandleBtnCases({
+    cases: buttonTypes,
+    currValue: variant,
+    values: API.styles,
+  });
 
-  const handleButtonBackdrop = () =>
-    handlePropCases({
-      cases: ["primary", "secondary", "destructive", "ghost", "outlined"],
-      currValue: variant,
-      values: API.styles.backdrop,
-    });
-
-  const handleButtonVariant = () =>
-    handlePropCases({
-      cases: ["default", "primary", "secondary", "destructive", "ghost", "outlined"],
-      currValue: variant,
-      values: API.styles,
-    });
-
-  const handleButtonSize = () =>
-    handlePropCases({
-      cases: ["sm", "md", "lg", "xl"],
-      currValue: size,
-      values: API.sizes,
-    });
+  const handleSize = useHandleBtnCases({
+    cases: buttonSizes,
+    currValue: size,
+    values: API.sizes,
+  });
 
   useEffect(() => {
-    setBtnBackdropStyles(handleButtonBackdrop());
-    setBtnVariantStyles(handleButtonVariant());
-    setBtnSizeStyles(handleButtonSize());
-
-    if (removeClasses) {
-      setBtnRemoveClasses(removeClasses);
-    }
+    setBtnVariant(handleVariant);
+    setBtnSize(handleSize);
 
     if (extraClasses) {
       setBtnExtraClasses(extraClasses);
@@ -57,15 +53,7 @@ function useButtonApi(props: ButtonProps) {
   }, []);
 
   return {
-    btnBackdropVariantStyles,
-    btnExtraClasses,
-    btnVariantStyles,
-    btnSizeStyles,
-    filteredBtnClasses,
-    handleButtonSize,
-    handleButtonVariant,
-    setBtnVariantStyles,
-    setBtnSizeStyles,
+    buttonClasses,
   };
 }
 

@@ -4,7 +4,7 @@ import { PageHeader } from "./PageHeader";
 
 const meta: Meta<typeof PageHeader> = {
   component: PageHeader,
-  title: "Text/PageHeader",
+  title: "Page/PageHeader",
   args: {
     hasSubheading: true,
     subheading: "This is a Page Subheading",

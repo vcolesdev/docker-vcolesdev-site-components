@@ -1,9 +1,6 @@
 import { cn } from "@/src/utils/cn";
 
-/**
- * Button Root
- */
-export const BUTTON_ROOT = cn([
+const root = cn([
   "group/button",
   "relative",
   "flex",
@@ -31,10 +28,7 @@ export const BUTTON_ROOT = cn([
   "dark:hover:shadow-theme-dark",
 ]);
 
-/**
- * Button Backdrop Root
- */
-export const BUTTON_BACKDROP_ROOT = cn([
+const backdrop = cn([
   "group/button",
   "block",
   "absolute",
@@ -52,40 +46,16 @@ export const BUTTON_BACKDROP_ROOT = cn([
   "group-hover/button:translate-y-0",
 ]);
 
-/**
- * Button Content Wrapper
- */
-export const BUTTON_CONTENT_WRAPPER = cn(["inline-flex", "z-10", "relative"]);
+const contentWrapper = cn(["inline-flex", "z-10", "relative"]);
 
-/**
- * Button Sizes
- */
-export const BUTTON_SIZE_SM = cn(["h-[36px]", "px-3", "rounded-[6px]", "text-sm"]);
-export const BUTTON_SIZE_MD = cn(["h-[48px]", "px-4", "rounded-[6px]", "text-base"]);
-export const BUTTON_SIZE_LG = cn(["h-[52px]", "px-4", "rounded-[8px]", "text-[18px]"]);
-export const BUTTON_SIZE_XL = cn(["h-[60px]", "px-5", "rounded-[8px]", "text-[20px]"]);
+const small = cn(["h-[36px]", "px-3", "rounded-[6px]", "text-sm"]);
+const medium = cn(["h-[48px]", "px-4", "rounded-[6px]", "text-base"]);
+const large = cn(["h-[52px]", "px-4", "rounded-[8px]", "text-[18px]"]);
+const xlarge = cn(["h-[60px]", "px-5", "rounded-[8px]", "text-[20px]"]);
 
-/**
- * Button Background Gradients
- */
-export const BUTTON_BG_GRADIENT_PRIMARY = cn([
-  "bg-gradient-to-b",
-  "from-gradient-primary-start",
-  "to-gradient-primary-end",
-  "dark:from-gradient-primary--dark-start",
-  "dark:to-gradient-primary--dark-end",
-]);
+const defaultClasses = cn(["bg-slate-200", "dark:text-slate-800"]);
 
-export const BUTTON_BG_GRADIENT_SECONDARY = cn([""]);
-export const BUTTON_BG_GRADIENT_GHOST = cn([""]);
-export const BUTTON_BG_GRADIENT_OUTLINED = cn([""]);
-
-/**
- * Button Themes
- */
-export const BUTTON_THEME_DEFAULT = cn(["bg-slate-200", "dark:text-slate-800"]);
-
-export const BUTTON_THEME_PRIMARY = cn([
+const primary = cn([
   "border",
   "border-button",
   "border-melon",
@@ -98,7 +68,7 @@ export const BUTTON_THEME_PRIMARY = cn([
   "dark:hover:bg-rose-dark",
 ]);
 
-export const BUTTON_THEME_SECONDARY = cn([
+const secondary = cn([
   "border",
   "border-button",
   "border-tree-bark",
@@ -110,7 +80,7 @@ export const BUTTON_THEME_SECONDARY = cn([
   "dark:hover:border-baby-blue",
 ]);
 
-export const BUTTON_THEME_GHOST = cn([
+const ghost = cn([
   "border",
   "border-button",
   "border-transparent",
@@ -122,7 +92,7 @@ export const BUTTON_THEME_GHOST = cn([
   "dark:hover:border-baby-blue",
 ]);
 
-export const BUTTON_THEME_OUTLINED = cn([
+const outlined = cn([
   "text-melon",
   "border",
   "border-button",
@@ -135,3 +105,22 @@ export const BUTTON_THEME_OUTLINED = cn([
   "dark:hover:bg-rose",
   "dark:hover:border-rose",
 ]);
+
+export const ButtonClasses = {
+  root: root,
+  backdrop: backdrop,
+  contentWrapper: contentWrapper,
+  sizes: {
+    sm: small,
+    md: medium,
+    lg: large,
+    xl: xlarge,
+  },
+  theme: {
+    default: defaultClasses,
+    primary: primary,
+    secondary: secondary,
+    ghost: ghost,
+    outlined: outlined,
+  },
+};

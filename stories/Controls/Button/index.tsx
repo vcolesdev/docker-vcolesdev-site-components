@@ -10,16 +10,11 @@ function MuiBaseButton({ props }: { props: ButtonProps }) {
   const ref = useRef<HTMLButtonElement>(null);
   const { children, disabled, style } = props;
   const { backdropStyles, buttonStyles, contentWrapperStyles } = useMuiBaseButton();
-  const { btnExtraClasses, btnVariantStyles, btnSizeStyles } = useButtonApi(props);
+  const { buttonClasses } = useButtonApi(props);
   const { getRootProps } = useButton({ ...props, rootRef: ref });
 
   return (
-    <MuiButton
-      className={`${buttonStyles} ${btnVariantStyles} ${btnSizeStyles} ${btnExtraClasses}`}
-      disabled={disabled}
-      style={style}
-      {...getRootProps()}
-    >
+    <MuiButton className={buttonClasses} disabled={disabled} style={style} {...getRootProps()}>
       <div className={contentWrapperStyles}>{children}</div>
       <span className={`${backdropStyles}`} />
     </MuiButton>
