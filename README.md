@@ -15,7 +15,7 @@ Docker is a platform for containerizing applications and automating the deployme
 ## Features
 
 - Docker Compose 2.29.2 (Docker 4.33.0)
-- Storybook 8.2.9
+- Storybook 8.3.6
 - React 18.3.1
 - Vite 5.3.1
 
