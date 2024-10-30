@@ -14,6 +14,7 @@ const requiredConfig = {
 /**
  * TypeScript config for Storybook
  */
+/*
 const typescriptConfig = {
   typescript: {
     reactDocgen: "react-docgen-typescript",
@@ -25,6 +26,7 @@ const typescriptConfig = {
     },
   },
 };
+ */
 
 /**
  * Optional Storybook config
@@ -43,7 +45,7 @@ const optionalConfig = {
  */
 const config = {
   ...requiredConfig,
-  ...typescriptConfig,
+  //...typescriptConfig,
   ...optionalConfig,
   async viteFinal(config: InlineConfig) {
     const { mergeConfig } = await import("vite");

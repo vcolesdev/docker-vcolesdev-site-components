@@ -1,16 +1,17 @@
 import { cn } from "@/src/utils/cn";
-import * as React from "react";
+import { ToggleGroupContext } from "@/stories/ToggleGroup/context";
 import { ComponentPropsWithRef, ForwardedRef, forwardRef, useContext } from "react";
+import * as React from "react";
 
-import { ToggleGroupContext } from "./context";
-
-type ToggleButtonBaseApi = {
+type ToggleGroupButtonBaseApi = {
   children: React.ReactNode | React.ReactNode[] | string;
   className?: string;
+  pos?: "a" | "b" | "c";
   value: string;
 };
 
-type ToggleButtonApi = ToggleButtonBaseApi & Omit<ComponentPropsWithRef<"button">, keyof ToggleButtonBaseApi>;
+type ToggleGroupButtonApi = ToggleGroupButtonBaseApi &
+  Omit<ComponentPropsWithRef<"button">, keyof ToggleGroupButtonBaseApi>;
 
 const BASE_CLASSES = cn([
   "px-3",
@@ -34,11 +35,15 @@ const BASE_CLASSES = cn([
 
 const TOGGLE_BUTTON = {
   element: cn([
-    "bg-transparent",
+    "bg-[#ffedea]",
+    "border-2",
+    "border-transparent",
     "text-tree-bark",
     "shadow-sm",
-    "hover:bg-transparent",
+    "hover:bg-white",
     "hover:text-melon",
+    "hover:border-melon",
+    "focus:bg-white",
     "focus:text-melon",
     "focus:ring-melon",
     "focus:ring-[2px]",
@@ -46,7 +51,8 @@ const TOGGLE_BUTTON = {
     "dark:focus:ring-[1.5px]",
     "dark:bg-transparent",
     "dark:hover:bg-transparent",
-    "dark:hover:text-white",
+    "dark:hover:border-[#768a93]",
+    "dark:hover:text-rose",
     "dark:focus:bg-slate-800",
     "dark:focus:text-white",
     "dark:focus:ring-sky",
@@ -57,14 +63,9 @@ const TOGGLE_BUTTON = {
 };
 
 const SELECTED_CLASSES = cn([]);
-const TOGGLE_GROUP_CLASSES = cn([""]);
 
-interface ToggleGroupApi {
-  children: React.ReactNode | React.ReactNode[] | string;
-}
-
-const ToggleButton = forwardRef(function ToggleButton(
-  { children, className, value, ...rest }: ToggleButtonApi,
+const ToggleGroupButtonBase = forwardRef(function ToggleButton(
+  { children, className, value, ...rest }: ToggleGroupButtonApi,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const { value: selectedValue, onChange } = useContext(ToggleGroupContext);
@@ -81,50 +82,27 @@ const ToggleButton = forwardRef(function ToggleButton(
   );
 });
 
-const ToggleButtonA = forwardRef(function ToggleButtonA(
-  { children, value, ...rest }: ToggleButtonApi,
+const ToggleGroupButton = forwardRef(function ToggleGroupButton(
+  { children, pos, value, ...rest }: ToggleGroupButtonApi,
   ref: ForwardedRef<HTMLDivElement>
 ) {
-  return (
-    <ToggleButton className={`${TOGGLE_BUTTON.first}`} value={value} {...rest}>
+  return pos === "a" ? (
+    <ToggleGroupButtonBase className={`${TOGGLE_BUTTON.first}`} value={value} {...rest}>
       {children}
-    </ToggleButton>
+    </ToggleGroupButtonBase>
+  ) : pos === "b" ? (
+    <ToggleGroupButtonBase className={`${TOGGLE_BUTTON.second}`} value={value} {...rest}>
+      {children}
+    </ToggleGroupButtonBase>
+  ) : pos === "c" ? (
+    <ToggleGroupButtonBase className={`${TOGGLE_BUTTON.third}`} value={value} {...rest}>
+      {children}
+    </ToggleGroupButtonBase>
+  ) : (
+    <ToggleGroupButtonBase value={value} {...rest}>
+      {children}
+    </ToggleGroupButtonBase>
   );
 });
 
-const ToggleButtonB = forwardRef(function ToggleButtonB(
-  { children, value, ...rest }: ToggleButtonApi,
-  ref: ForwardedRef<HTMLDivElement>
-) {
-  return (
-    <ToggleButton className={`${TOGGLE_BUTTON.second}`} value={value} {...rest}>
-      {children}
-    </ToggleButton>
-  );
-});
-
-const ToggleButtonC = forwardRef(function ToggleButtonC(
-  { children, value, ...rest }: ToggleButtonApi,
-  ref: ForwardedRef<HTMLDivElement>
-) {
-  return (
-    <ToggleButton className={`${TOGGLE_BUTTON.third}`} value={value} {...rest}>
-      {children}
-    </ToggleButton>
-  );
-});
-
-const ToggleGroup = forwardRef(function ToggleGroup(
-  { children, ...rest }: ToggleGroupApi,
-  ref: ForwardedRef<HTMLDivElement>
-) {
-  const {} = rest;
-
-  return (
-    <div className={`${TOGGLE_GROUP_CLASSES}`} {...rest} ref={ref}>
-      {children}
-    </div>
-  );
-});
-
-export { ToggleButton, ToggleGroup, ToggleButtonA, ToggleButtonB, ToggleButtonC };
+export { ToggleGroupButtonBase, ToggleGroupButton };
