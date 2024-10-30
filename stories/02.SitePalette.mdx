@@ -2,7 +2,7 @@
 
 import { swatches } from "../src/swatches";
 
-import { ColorSwatch } from "@/stories/ColorSwatch/ColorSwatch";
+import { ColorSwatch } from "./ColorSwatch/ColorSwatch.tsx";
 
 # Site Palette
 
@@ -10,11 +10,9 @@ The site colors are defined in the `src/swatches.ts` file. Additionally, the col
 
 ## Neutrals
 
-<ul>
-    <li>White</li>
-    <li>Black</li>
-    <li>Neutral</li>
-</ul>
+- White
+- Black
+- Neutral
 
 <div className="grid grid-cols-4 gap-10 py-10">
     <ColorSwatch color={swatches.white} size="lg" />
@@ -24,18 +22,16 @@ The site colors are defined in the `src/swatches.ts` file. Additionally, the col
 
 ## Site
 
-<ul>
-    <li>Melon</li>
-    <li>Baby Pink</li>
-    <li>Rose</li>
-    <li>Rose - Dark</li>
-    <li>Sky</li>
-    <li>Baby Blue</li>
-    <li>Charcoal Blue</li>
-    <li>Freshwater Blue</li>
-    <li>Deep Brown</li>
-    <li>Tree Bark</li>
-</ul>
+- Melon
+- Baby Pink
+- Rose
+- Rose - Dark
+- Sky
+- Baby Blue
+- Charcoal Blue
+- Freshwater Blue
+- Deep Brown
+- Tree Bark
 
 <div className="grid grid-cols-4 gap-10 py-10">
     {Object.keys(swatches.site).map((key) => (
@@ -45,11 +41,9 @@ The site colors are defined in the `src/swatches.ts` file. Additionally, the col
 
 ## States
 
-<ul>
-  <li>Success</li>
-  <li>Warning</li>
-  <li>Danger</li>
-</ul>
+- Success
+- Warning
+- Danger
 
 <div className="grid grid-cols-4 gap-10 py-10">
     {Object.keys(swatches.states).map((key) => (
@@ -59,10 +53,8 @@ The site colors are defined in the `src/swatches.ts` file. Additionally, the col
 
 ## Actions
 
-<ul>
-    <li>Primary</li>
-    <li>Primary - Dark</li>
-</ul>
+- Primary
+- Primary - Dark
 
 <div className="grid grid-cols-4 gap-10 py-10">
     {Object.keys(swatches.actions).map((key) => (
@@ -72,12 +64,10 @@ The site colors are defined in the `src/swatches.ts` file. Additionally, the col
 
 ## Backgrounds
 
-<ul>
-    <li>Light</li>
-    <li>Light - Elevated</li>
-    <li>Dark</li>
-    <li>Dark - Elevated</li>
-</ul>
+- Light
+- Light - Elevated
+- Dark
+- Dark - Elevated
 
 <div className="grid grid-cols-4 gap-10 py-10">
     {Object.keys(swatches.bg).map((key) => (
