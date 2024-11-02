@@ -1,7 +1,7 @@
+import { TablerIcon, TablerIconName } from "@/stories/TablerIcon/TablerIcon";
 import * as React from "react";
 import { useEffect, useState } from "react";
 
-import { TablerIcon, TablerIconName } from "@/stories/TablerIcon/TablerIcon";
 import { Button } from "../Button";
 import { ButtonApi } from "../Button/Button.api";
 
@@ -36,15 +36,17 @@ function IconButton(props: IconButtonApi) {
     }
   });
 
+  const getCurrPadding = () => {};
+
   return iconBtnPosition === "start" ? (
-    <Button hasIcon iconPos="start" style={{ paddingLeft: `0 !important` }} {...props}>
+    <Button hasIcon iconPos="start" {...props}>
       <span className="me-2 flex items-center">
         <TablerIcon size={iconBtnSize} currentIcon={iconBtnName} />
       </span>
       <span>{children}</span>
     </Button>
   ) : (
-    <Button hasIcon iconPos="end" style={{ paddingRight: `0 !important` }} {...props}>
+    <Button hasIcon iconPos="end" {...props}>
       <span>{children}</span>
       <span className="ms-2 flex items-center">
         <TablerIcon size={iconBtnSize} currentIcon={iconBtnName} />

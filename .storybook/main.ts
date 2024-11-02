@@ -35,6 +35,7 @@ const optionalConfig = {
   addons: addons,
   core: {
     builder: "@storybook/builder-vite",
+    disableTelemetry: true, // 👈 Disables telemetry
   },
   staticDirs: ["../public"],
 };

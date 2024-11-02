@@ -13,6 +13,7 @@ export interface ButtonProps extends ButtonBaseProps {
   extraClasses?: string;
   hasIcon?: boolean;
   iconPos?: "start" | "end";
+  //rounded?: boolean;
   variant?: ButtonVariant;
   removeClasses?: string[];
   size?: ButtonSize;
@@ -46,6 +47,7 @@ export const btnStyles = {
 
 // Button API
 export const api = {
+  //rounded: Btn.rounded,
   sizes: btnSizes,
   styles: btnStyles,
 } as ButtonApi;

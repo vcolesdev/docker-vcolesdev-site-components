@@ -48,10 +48,12 @@ const backdrop = cn([
 
 const contentWrapper = cn(["inline-flex", "z-10", "relative"]);
 
-const small = cn(["h-[36px]", "px-3", "rounded-[6px]", "text-sm"]);
-const medium = cn(["h-[48px]", "px-4", "rounded-[6px]", "text-base"]);
-const large = cn(["h-[52px]", "px-4", "rounded-[8px]", "text-[18px]"]);
-const xlarge = cn(["h-[60px]", "px-5", "rounded-[8px]", "text-[20px]"]);
+const small = cn(["h-[40px]", "px-4", "text-sm", "rounded-md", "tracking-tight"]);
+const medium = cn(["h-[48px]", "px-6", "text-base", "rounded-md", "tracking-tight"]);
+const large = cn(["h-[54px]", "px-7", "text-[18px]", "rounded-md", "tracking-tight"]);
+const xlarge = cn(["h-[60px]", "px-8", "text-[20px]", "rounded-md", "tracking-tight"]);
+
+const rounded = cn(["rounded-[30px]"]);
 
 const defaultClasses = cn(["bg-slate-200", "dark:text-slate-800"]);
 

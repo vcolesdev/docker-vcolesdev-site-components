@@ -1,7 +1,7 @@
+import { Spacer } from "@/stories/Spacer/Spacer";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 
-import { Spacer } from "@/stories/Spacer/Spacer";
 import { Button } from "./index";
 
 const SIZE_OPTS = ["sm", "md", "lg", "xl"] as const;
@@ -14,6 +14,7 @@ const VARIANT_OPTS = ["default", "primary", "secondary", "ghost", "outlined"] as
 const getDefaultArgs = () =>
   ({
     children: "Button",
+    rounded: false,
     size: "md",
     variant: "default",
   }) as const;
@@ -147,6 +148,9 @@ export const ExtraLarge: Story = {
   },
 };
 
+/**
+ * Full Width Sizes
+ */
 export const FullWidthSizes: Story = {
   render: () => {
     return (
