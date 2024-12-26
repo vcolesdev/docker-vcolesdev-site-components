@@ -1,32 +1,47 @@
+const site = {
+  babyBlue: "hsl(200, 40%, 72%)",
+  babyPink: "hsl(11, 80%, 90%)",
+  charcoalBlue: "hsl(225, 28%, 23%)",
+  melon: "hsl(0, 90%, 72%)",
+  rose: "hsl(347, 58%, 46%)",
+  roseDark: "hsl(347, 58%, 31%)",
+  salmon: "hsl(0, 57%, 60%)",
+  treeBark: "hsl(11, 10%, 21%)",
+  tropicalIndigo: "hsl(261, 100%, 79%)",
+};
+
+const actions = {
+  primary: site.salmon,
+  secondary: site.rose,
+  primaryDark: site.tropicalIndigo,
+  secondaryDark: site.salmon,
+};
+
+const bg = {
+  light: site.babyPink,
+  lightElevated: "hsl(11, 80%, 97%)",
+  dark: site.charcoalBlue,
+  darkElevated: "hsl(225, 28%, 40%)",
+};
+
+const text = {
+  light: site.treeBark,
+  dark: "hsl(258, 26%, 85%)",
+};
+
+const states = {
+  success: "hsl(160, 84%, 39%)",
+  warning: "hsl(45, 100%, 50%)",
+  danger: "hsl(354, 69%, 50%)",
+};
+
 export const swatches = {
-  white: "rgb(255, 255, 255)",
-  black: "rgb(30, 28, 26)",
-  neutral: "rgb(218, 221, 224)",
-  site: {
-    melon: "rgb(233, 117, 93)",
-    babyPink: "rgb(255, 246, 244)",
-    rose: "rgb(244, 63, 94)",
-    roseDark: "rgb(222, 39, 70)",
-    sky: "rgb(209, 222, 229)",
-    babyBlue: "rgb(163, 188, 202)",
-    charcoalBlue: "rgb(32, 48, 56)",
-    freshwaterBlue: "rgb(117, 155, 176)",
-    deepBrown: "rgb(81, 51, 46)",
-    treeBark: "rgb(93, 69, 64)",
-  },
-  states: {
-    success: "#10b981",
-    warning: "#f59e0b",
-    danger: "#f43f5e",
-  },
-  actions: {
-    primary: "rgb(233, 117, 93)",
-    primaryDark: "rgb(244, 63, 94)",
-  },
-  bg: {
-    light: "rgb(250, 224, 219)",
-    lightElevated: "rgb(255, 246, 244)", // babyPink
-    dark: "rgb(22, 32, 38)",
-    darkElevated: "rgb(32, 48, 56)", // charcoalBlue
-  },
+  white: "hsl(0, 0%, 100%)",
+  black: "hsl(30, 7%, 11%)",
+  neutral: "hsl(210, 9%, 87%)",
+  site: site,
+  states: states,
+  actions: actions,
+  bg: bg,
+  text: text,
 };

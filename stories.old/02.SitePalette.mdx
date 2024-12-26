@@ -1,0 +1,76 @@
+{/* SitePalette.mdx */}
+
+import { swatches } from "../src/swatches.js";
+
+import { ColorSwatch } from "./ColorSwatch/ColorSwatch.tsx";
+
+# Site Palette
+
+The site colors are defined in the `src/swatches.ts` file. Additionally, the colors are defined as CSS variables in `src/tailwind.css` and its configuration and throughout the site.
+
+## Neutrals
+
+- White
+- Black
+- Neutral
+
+<div className="grid grid-cols-4 gap-10 py-10">
+    <ColorSwatch color={swatches.white} size="lg" />
+    <ColorSwatch color={swatches.black} size="lg" />
+    <ColorSwatch color={swatches.neutral} size="lg" />
+</div>
+
+## Site
+
+- Melon
+- Baby Pink
+- Rose
+- Rose - Dark
+- Sky
+- Baby Blue
+- Charcoal Blue
+- Freshwater Blue
+- Deep Brown
+- Tree Bark
+
+<div className="grid grid-cols-4 gap-10 py-10">
+    {Object.keys(swatches.site).map((key) => (
+        <ColorSwatch key={key} name={key} color={swatches.site[key]} size="lg" />
+    ))}
+</div>
+
+## States
+
+- Success
+- Warning
+- Danger
+
+<div className="grid grid-cols-4 gap-10 py-10">
+    {Object.keys(swatches.states).map((key) => (
+        <ColorSwatch key={key} name={key} color={swatches.states[key]} size="lg" />
+    ))}
+</div>
+
+## Actions
+
+- Primary
+- Primary - Dark
+
+<div className="grid grid-cols-4 gap-10 py-10">
+    {Object.keys(swatches.actions).map((key) => (
+        <ColorSwatch key={key} name={key} color={swatches.actions[key]} size="lg" />
+    ))}
+</div>
+
+## Backgrounds
+
+- Light
+- Light - Elevated
+- Dark
+- Dark - Elevated
+
+<div className="grid grid-cols-4 gap-10 py-10">
+    {Object.keys(swatches.bg).map((key) => (
+        <ColorSwatch key={key} name={key} color={swatches.bg[key]} size="lg" />
+    ))}
+</div>

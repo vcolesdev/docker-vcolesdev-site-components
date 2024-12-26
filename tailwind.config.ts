@@ -1,5 +1,3 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
-
 // @todo Organize this file.
 
 const themeScreens = {
@@ -30,29 +28,44 @@ const themeShadowColors = {
 const themeColors = {
   black: "var(--color-black)",
   neutral: "var(--color-neutral)",
+  white: "var(--color-white)",
+  // Melon
   melon: "var(--color-melon)",
+  "melon-dark": "var(--color-melon-dark)",
+  "melon-light": "var(--color-melon-light)",
+  // Charcoal Blue
+  "charcoal-blue": "var(--color-charcoal-blue)",
+  "charcoal-blue-dark": "var(--color-charcoal-blue-dark)",
+  "charcoal-blue-light": "var(--color-charcoal-blue-light)",
+  // Rose
   rose: "var(--color-rose)",
   "rose-dark": "var(--color-rose-dark)",
-  sky: "var(--color-sky)",
+  // Salmon
+  salmon: "var(--color-salmon)",
+  // Baby Blue
   "baby-blue": "var(--color-baby-blue)",
-  "freshwater-blue": "var(--color-freshwater-blue)",
-  "deep-brown": "var(--color-deep-brown)",
+  // Baby Pink
+  "baby-pink": "var(--color-baby-pink)",
+  // Tree Bark
   "tree-bark": "var(--color-tree-bark)",
+  // Tropical Indigo
+  "tropical-indigo": "var(--color-tropical-indigo)",
 };
 
 const themeStateColors = {
   success: "var(--color-success)",
   warning: "var(--color-warning)",
   destructive: "var(--color-destructive)",
+  "destructive-hover": "var(--color-destructive-hover)",
 };
 
 const themeBgColors = {
   light: "var(--bg-color)",
-  "light--elevated": "var(--bg-color--elevated)",
-  dark: "var(--bg-color--dark)",
-  "dark--elevated": "var(--bg-color--dark-elevated)",
-  spotlight: "var(--bg-color--elevated)",
-  "spotlight-dark": "var(--bg-color--dark-elevated)",
+  dark: "var(--bg-color-dark)",
+  spotlight: "var(--bg-color-elevated)",
+  "light-elevated": "var(--bg-color-elevated)",
+  "dark-elevated": "var(--bg-color-dark-elevated)",
+  "spotlight-dark": "var(--bg-color-dark-elevated)",
 };
 
 const themeGradientColorStops = {
@@ -62,23 +75,33 @@ const themeGradientColorStops = {
 
 const themeTextColors = {
   "body-color": "var(--text-color)",
-  "body-color--muted": "var(--text-color--muted)",
-  "body-color--dark": "var(--text-color--dark)",
-  "body-color--dark-muted": "var(--text-color--dark-muted)",
+  "body-color-muted": "var(--text-color-muted)",
+  "body-color-dark": "var(--text-color-dark)",
+  "body-color-dark-muted": "var(--text-color-dark-muted)",
 };
 
 const themeHeadingColors = {
   heading: "var(--color-heading)",
-  "heading--dark": "var(--color-heading--dark)",
+  "heading--dark": "var(--color-heading-dark)",
   "heading-subtitle": "var(--color-heading-subtitle)",
-  "heading-subtitle--dark": "var(--color-heading-subtitle--dark)",
+  "heading-subtitle-dark": "var(--color-heading-subtitle-dark)",
   "site-intro": "var(--color-site-intro)",
-  "site-intro--dark": "var(--color-site-intro--dark)",
+  "site-intro-dark": "var(--color-site-intro-dark)",
 };
 
 const themeActionColors = {
-  "action-primary": "var(--color-action-primary)",
-  "action-primary--dark": "var(--color-action-primary--dark)",
+  primary: "var(--color-primary)",
+  "primary-hover": "var(--color-primary-hover)",
+  "primary-dark": "var(--color-primary-dark)",
+  "primary-dark-hover": "var(--color-primary-dark-hover)",
+  secondary: "var(--color-secondary)",
+  "secondary-hover": "var(--color-secondary-hover)",
+  "secondary-dark": "var(--color-secondary-dark)",
+  "secondary-dark-hover": "var(--color-secondary-dark-hover)",
+  ghost: "var(--color-ghost)",
+  "ghost-hover": "var(--color-ghost-hover)",
+  "ghost-dark": "var(--color-ghost-dark)",
+  "ghost-dark-hover": "var(--color-ghost-dark-hover)",
 };
 
 const themeFontSizes = {
@@ -100,10 +123,11 @@ const elementFontSizes = {
 };
 
 const baseFontFamilies = {
-  body: ["Reddit Sans", ...fontFamily.sans],
-  button: ["Reddit Sans", ...fontFamily.sans],
-  heading: ["Anek Tamil", ...fontFamily.serif],
-  cursive: ["Playwrite AU NSW", ...fontFamily.serif],
+  body: ["var(--font-body)", "sans-serif"],
+  button: ["var(--font-button)", "sans-serif"],
+  heading: ["var(--font-heading)", "serif"],
+  "heading-alt": ["var(--font-heading-alt)", "serif"],
+  cursive: ["Playwrite AU NSW", "cursive"],
 };
 
 const transitionTimingFunc = {
@@ -166,5 +190,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
 };

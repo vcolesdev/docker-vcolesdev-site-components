@@ -6,7 +6,7 @@
 /* Dark */
 .dark {
   .docs-story {
-    background-color: var(--bg-color--dark);
-    color: var(--text-color--dark);
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
   }
 }

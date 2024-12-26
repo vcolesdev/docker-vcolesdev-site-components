@@ -1,178 +1,114 @@
-import { Spacer } from "@/stories/Spacer/Spacer";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 
-import { Button } from "./index";
+import { Button, ButtonApi } from "./Button";
 
-const SIZE_OPTS = ["sm", "md", "lg", "xl"] as const;
-const VARIANT_OPTS = ["default", "primary", "secondary", "ghost", "outlined"] as const;
+const ButtonArgs = {
+  children: "View Projects",
+} as ButtonApi;
 
-/**
- * Get the default args for the story
- * @function getDefaultArgs
- */
-const getDefaultArgs = () =>
-  ({
-    children: "Button",
-    rounded: false,
-    size: "md",
-    variant: "default",
-  }) as const;
-
-/**
- * Get the arg types for the story
- * @function getArgTypes
- */
-const getArgTypes = () =>
-  ({
-    size: {
-      control: { type: "select" },
-      options: SIZE_OPTS,
+const ButtonArgTypes = {
+  variant: {
+    control: {
+      type: "select",
+      options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
     },
-    variant: {
-      control: { type: "select" },
-      options: VARIANT_OPTS,
-    },
-  }) as const;
+  },
+} as const;
 
-/**
- * Button Story Definitions
- */
 const meta: Meta<typeof Button> = {
-  component: Button,
   title: "Controls/Button",
-  args: getDefaultArgs(),
-  argTypes: getArgTypes(),
-  render: (args) => <Button {...args} />,
+  component: Button,
+  args: ButtonArgs,
+  argTypes: ButtonArgTypes,
+  render: (args: ButtonApi) => <Button {...args} />,
 };
-
 export default meta;
-
 type Story = StoryObj<typeof Button>;
 
-/**
- * Default
- */
+// Default
 export const Default: Story = {
+  args: ButtonArgs,
+};
+
+// Variants
+export const Variants: Story = {
+  render: (args) => (
+    <div className="flex space-x-4">
+      <Button variant="default" {...args}>
+        Primary
+      </Button>
+      <Button variant="secondary" {...args}>
+        Secondary
+      </Button>
+      <Button variant="destructive" {...args}>
+        Destructive
+      </Button>
+      <Button variant="outline" {...args}>
+        Outline
+      </Button>
+      <Button variant="ghost" {...args}>
+        Ghost
+      </Button>
+      <Button variant="link" {...args}>
+        Link
+      </Button>
+    </div>
+  ),
+};
+
+// Destructive
+export const Destructive: Story = {
   args: {
-    variant: "primary",
-    size: "md",
+    ...ButtonArgs,
+    variant: "destructive",
   },
 };
 
-/**
- * Primary
- */
-export const Primary: Story = {
+// Outline
+export const Outline: Story = {
   args: {
-    children: "View Projects",
-    size: "md",
-    type: "button",
-    variant: "primary",
+    ...ButtonArgs,
+    variant: "outline",
   },
 };
 
-/**
- * Secondary
- */
+// Secondary
 export const Secondary: Story = {
   args: {
-    children: "View Resume",
+    ...ButtonArgs,
     variant: "secondary",
   },
 };
 
-/**
- * Ghost
- */
+// Ghost
 export const Ghost: Story = {
   args: {
-    children: "View Projects",
-    size: "md",
+    ...ButtonArgs,
     variant: "ghost",
   },
 };
 
-/**
- * Outlined
- */
-export const Outlined: Story = {
+// Link
+export const Link: Story = {
   args: {
-    children: "Some Action",
-    size: "md",
-    variant: "outlined",
+    ...ButtonArgs,
+    variant: "link",
   },
 };
 
-/**
- * Small
- */
+// Small
 export const Small: Story = {
   args: {
-    children: "Small Button",
+    ...ButtonArgs,
     size: "sm",
-    variant: "primary",
   },
 };
 
-/**
- * Medium
- */
-export const Medium: Story = {
-  args: {
-    children: "Medium Button",
-    size: "md",
-    variant: "primary",
-  },
-};
-
-/**
- * Large
- */
+// Large
 export const Large: Story = {
   args: {
-    children: "Large Button",
+    ...ButtonArgs,
     size: "lg",
-    variant: "primary",
-  },
-};
-
-/**
- * Extra Large
- */
-export const ExtraLarge: Story = {
-  args: {
-    children: "Featured Story",
-    size: "xl",
-    variant: "primary",
-  },
-};
-
-/**
- * Full Width Sizes
- */
-export const FullWidthSizes: Story = {
-  render: () => {
-    return (
-      <>
-        <div className="flex flex-col space-y-6">
-          {SIZE_OPTS.map((size) => (
-            <div className="inline-block" key={size}>
-              <Button size={size} variant="primary">
-                Featured Post
-              </Button>
-            </div>
-          ))}
-        </div>
-        <Spacer size="lg" />
-        <div className="flex flex-col space-y-6">
-          {SIZE_OPTS.map((size) => (
-            <Button key={size} size={size} variant="primary">
-              Featured Post
-            </Button>
-          ))}
-        </div>
-      </>
-    );
   },
 };

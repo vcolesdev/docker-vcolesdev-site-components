@@ -1,4 +1,12 @@
 import alias from "./alias";
+import * as path from "path";
+
+/**
+ * This function is used to resolve the absolute path of a package.
+ * It is needed in projects that use Yarn PnP or are set up within a monorepo.
+ */
+const getAbsolutePath = (packageName: string): any =>
+  path.dirname(require.resolve(path.join(packageName, "package.json")));
 
 /**
  * Vite config

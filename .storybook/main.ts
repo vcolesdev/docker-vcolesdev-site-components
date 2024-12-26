@@ -9,24 +9,10 @@ import viteConfig from "./config/viteconfig";
 const requiredConfig = {
   framework: "@storybook/react-vite",
   stories: stories,
-};
-
-/**
- * TypeScript config for Storybook
- */
-/*
-const typescriptConfig = {
-  typescript: {
-    reactDocgen: "react-docgen-typescript",
-    reactDocgenTypescriptOptions: {
-      tsconfigPath: "../tsconfig.json",
-      shouldExtractLiteralValuesFromEnum: true,
-      shouldRemoveUndefinedFromOptional: true,
-      propFilter: (prop) => (prop.parent ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) : true),
-    },
+  features: {
+    previewMdx2: true, // 👈 MDX 2 enabled here
   },
 };
- */
 
 /**
  * Optional Storybook config
@@ -46,7 +32,6 @@ const optionalConfig = {
  */
 const config = {
   ...requiredConfig,
-  //...typescriptConfig,
   ...optionalConfig,
   async viteFinal(config: InlineConfig) {
     const { mergeConfig } = await import("vite");

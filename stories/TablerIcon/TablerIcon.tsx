@@ -1,11 +1,17 @@
+import { TabIcons } from "@/stories/TablerIcon/icons";
 import * as React from "react";
 import { ForwardedRef, Suspense, forwardRef, lazy, useEffect, useState } from "react";
 
-import { TabIcons } from "./icons";
+/**
+ * Tabler Icon Name
+ * @type {TablerIconName}
+ */
+export type TablerIconName = keyof typeof TabIcons;
 
-type TablerIconName = keyof typeof TabIcons;
-
-interface TablerIconApi {
+/**
+ * @interface TablerIconApi
+ */
+export interface TablerIconApi {
   color?: string;
   currentIcon?: TablerIconName;
   size?: number;
@@ -14,53 +20,73 @@ interface TablerIconApi {
   //viewBox?: number;
 }
 
-const TablerIcon = forwardRef(function TablerIcon({ ...props }: TablerIconApi, ref: ForwardedRef<HTMLSpanElement>) {
-  const {
-    color,
-    currentIcon,
-    size,
-    stroke,
-    title,
-    //viewBox
-  } = props;
+/**
+ * @const DEFAULT_TABLER_ICON
+ */
+export const DEFAULT_TABLER_ICON = "IconAlien";
 
-  const [iconName, setIconName] = useState<TablerIconName | null>(null);
-  const [iconColor, setIconColor] = useState<string | "currentColor">("currentColor");
-  const [iconSize, setIconSize] = useState<number | 24>(24);
-  const [iconStroke, setIconStroke] = useState<number | 2>(2);
-  const [iconTitle, setIconTitle] = useState<string | "">("");
-  //const [iconViewBox, setIconViewBox] = useState<number | null>(null);
+/**
+ * @const DEFAULT_TABLER_COLOR
+ */
+export const DEFAULT_TABLER_COLOR = "currentColor";
 
-  useEffect(() => {
-    setIconColor(color);
-    setIconName(currentIcon || "IconAlien");
-    setIconSize(size);
-    setIconStroke(stroke);
-    setIconTitle(title);
-    //setIconViewBox(viewBox);
-  }, [
-    iconColor,
-    iconName,
-    iconSize,
-    iconStroke,
-    iconTitle,
-    //iconViewBox
-  ]);
+/**
+ * @const DEFAULT_TABLER_SIZE
+ */
+export const DEFAULT_TABLER_SIZE = 24;
 
-  function Icon({ currentIcon, ...props }: TablerIconApi) {
-    const DynamicIcon = lazy(() => import(`../../node_modules/@tabler/icons-react/dist/esm/icons/${currentIcon}.mjs`));
-    return (
-      <Suspense fallback={<div>"</div>}>
-        <DynamicIcon {...props} />
-      </Suspense>
-    );
-  }
+/**
+ * @const DEFAULT_TABLER_STROKE
+ */
+export const DEFAULT_TABLER_STROKE = 2;
 
+/**
+ * @const DEFAULT_TABLER_TITLE
+ */
+export const DEFAULT_TABLER_TITLE = "";
+
+/**
+ * Template
+ * @param currentIcon
+ * @param props
+ */
+export function Template({ currentIcon, ...props }: TablerIconApi) {
+  const icon = currentIcon.toString();
+  const importString = import(`../../node_modules/@tabler/icons-react/dist/esm/icons/${icon}.mjs`);
+
+  const DynamicIcon = lazy(() => importString);
   return (
-    <span ref={ref}>
-      <Icon currentIcon={iconName} stroke={iconStroke} size={iconSize} color={iconColor} title={iconTitle} {...props} />
-    </span>
+    <Suspense fallback={<div>"</div>}>
+      <DynamicIcon {...props} />
+    </Suspense>
   );
-});
+}
 
-export { TablerIcon, TablerIconApi, TablerIconName };
+/**
+ * TablerIcon Component
+ */
+export const TablerIcon = forwardRef(function TablerIcon(
+  { ...props }: TablerIconApi,
+  ref: ForwardedRef<HTMLSpanElement>
+) {
+  const { color, currentIcon, size, stroke, title } = props;
+
+  useEffect(() => {}, [props]);
+
+  const DefaultIcon = () => (
+    <Template
+      currentIcon={DEFAULT_TABLER_ICON}
+      color={DEFAULT_TABLER_COLOR}
+      size={DEFAULT_TABLER_SIZE}
+      stroke={DEFAULT_TABLER_SIZE}
+      title={DEFAULT_TABLER_TITLE}
+      {...props}
+    />
+  );
+
+  const output = (props && (
+    <Template currentIcon={currentIcon} stroke={stroke} size={size} color={color} title={title} {...props} />
+  )) || <DefaultIcon />;
+
+  return <span ref={ref}>{output}</span>;
+});

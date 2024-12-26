@@ -1,53 +1,76 @@
+import { TablerIcon, TablerIconApi } from "@/stories/TablerIcon/TablerIcon";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 
-import { TablerIcon } from "./TablerIcon";
+const TablerIconArgs = {
+  currentIcon: "IconAlien" as TablerIconApi["currentIcon"],
+  color: "currentColor",
+  size: 24,
+  stroke: 2,
+  title: "",
+  //viewBox: `0 0 24 24`,
+} as TablerIconApi;
+
+const TablerIconArgTypes = {
+  color: {
+    control: {
+      type: "color",
+    },
+  },
+  currentIcon: {
+    control: {
+      type: "select",
+    },
+    options: [
+      "IconAlien",
+      "IconChevronLeft",
+      "IconChevronRight",
+      "IconMenu",
+      "IconBrandGithub",
+      "IconBrandJavascript",
+      "IconBrandNextjs",
+      "IconBrandPython",
+      "IconBrandReact",
+      "IconBrandStorybook",
+      "IconBrandTypescript",
+    ],
+    defaultValue: "IconAlien",
+  },
+  size: {
+    control: {
+      type: "number",
+    },
+  },
+  stroke: {
+    control: {
+      type: "number",
+    },
+  },
+  title: {
+    control: {
+      type: "text",
+    },
+  },
+} as const;
 
 const meta: Meta<typeof TablerIcon> = {
   component: TablerIcon,
   title: "Components/TablerIcon",
-  args: {
-    currentIcon: "IconAlien",
-    color: "currentColor",
-    size: 24,
-    stroke: 2,
-    title: "",
-    //viewBox: `0 0 24 24`,
-  },
-  argTypes: {
-    color: {
-      control: {
-        type: "color",
-      },
-    },
-    size: {
-      control: {
-        type: "number",
-      },
-    },
-    stroke: {
-      control: {
-        type: "number",
-      },
-    },
-    title: {
-      control: {
-        type: "text",
-      },
-    },
-  },
+  args: TablerIconArgs,
+  argTypes: TablerIconArgTypes,
 };
 export default meta;
-
 type Story = StoryObj<typeof TablerIcon>;
 
 // Default
 export const Default: Story = {
+  name: "TablerIcon",
   render: (args) => <TablerIcon {...args} />,
 };
 
 // Small
 export const Small: Story = {
+  name: "Icon - Small",
   args: {
     size: 16,
   },
@@ -56,6 +79,7 @@ export const Small: Story = {
 
 // Medium
 export const Medium: Story = {
+  name: "Icon - Medium",
   args: {
     size: 24,
   },
@@ -64,6 +88,7 @@ export const Medium: Story = {
 
 // Large
 export const Large: Story = {
+  name: "Icon - Large",
   args: {
     size: 32,
     stroke: 1.5,
@@ -73,6 +98,7 @@ export const Large: Story = {
 
 // Extra Large
 export const ExtraLarge: Story = {
+  name: "Icon - Extra Large",
   args: {
     size: 48,
     stroke: 1.5,
@@ -82,6 +108,7 @@ export const ExtraLarge: Story = {
 
 // 2X Large
 export const TwoXLarge: Story = {
+  name: "Icon - 2X Large",
   args: {
     size: 64,
     stroke: 1,
@@ -91,6 +118,7 @@ export const TwoXLarge: Story = {
 
 // Icon - Chevron Left
 export const ChevronLeft: Story = {
+  name: "Icon - Chevron Left",
   args: {
     currentIcon: "IconChevronLeft",
   },
@@ -99,6 +127,7 @@ export const ChevronLeft: Story = {
 
 // Icon - Chevron Right
 export const ChevronRight: Story = {
+  name: "Icon - Chevron Right",
   args: {
     currentIcon: "IconChevronRight",
   },
@@ -107,6 +136,7 @@ export const ChevronRight: Story = {
 
 // Icon - Menu
 export const Menu: Story = {
+  name: "Icon - Menu",
   args: {
     currentIcon: "IconMenu",
   },
@@ -115,6 +145,7 @@ export const Menu: Story = {
 
 // Brand - GitHub
 export const BrandGitHub: Story = {
+  name: "Icon - GitHub",
   args: {
     currentIcon: "IconBrandGithub",
   },
@@ -123,6 +154,7 @@ export const BrandGitHub: Story = {
 
 // Brand - JavaScript
 export const BrandJavaScript: Story = {
+  name: "Icon - JavaScript",
   args: {
     currentIcon: "IconBrandJavascript",
   },
@@ -131,6 +163,7 @@ export const BrandJavaScript: Story = {
 
 // Brand - Next.js
 export const BrandNextJS: Story = {
+  name: "Icon - NextJS",
   args: {
     currentIcon: "IconBrandNextjs",
   },
@@ -139,6 +172,7 @@ export const BrandNextJS: Story = {
 
 // Brand - Python
 export const BrandPython: Story = {
+  name: "Icon - Python",
   args: {
     currentIcon: "IconBrandPython",
   },
@@ -147,6 +181,7 @@ export const BrandPython: Story = {
 
 // Brand - React
 export const BrandReact: Story = {
+  name: "Icon - React",
   args: {
     currentIcon: "IconBrandReact",
   },
@@ -155,6 +190,7 @@ export const BrandReact: Story = {
 
 // Brand - Storybook
 export const BrandStorybook: Story = {
+  name: "Icon - Storybook",
   args: {
     currentIcon: "IconBrandStorybook",
   },
@@ -163,6 +199,7 @@ export const BrandStorybook: Story = {
 
 // Brand - TypeScript
 export const BrandTypeScript: Story = {
+  name: "Icon - TypeScript",
   args: {
     currentIcon: "IconBrandTypescript",
   },
