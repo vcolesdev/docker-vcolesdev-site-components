@@ -1,5 +1,6 @@
 import { DocsContainer as BaseContainer, DocsContainerProps } from "@storybook/blocks";
 import { FC, PropsWithChildren } from "react";
+import React from "react";
 
 import useCurrentTheme from "../hooks/useCurrentTheme";
 

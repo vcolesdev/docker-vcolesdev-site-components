@@ -5,32 +5,10 @@ import { type VariantProps, cva } from "class-variance-authority";
 import * as React from "react";
 import { ForwardedRef } from "react";
 
-const exampleClassnames = cn([
-  "inline-flex",
-  "items-center",
-  "justify-center",
-  "border",
-  "whitespace-nowrap",
-  "font-medium",
-  "focus-visible:opacity-80",
-  //"disabled:bg-neutral-alpha-3",
-  //"disabled:text-neutral-alpha-8",
-  "border-transparent",
-  "px-5",
-  "py-3",
-  "rounded-lg",
-  //"text-3",
-  //"bg-primary-9",
-  //"text-white",
-  //"hover:bg-primary-10",
-  //"focus-visible:bg-primary-10",
-]);
-
 /**
  * @const buttonSizes - Button sizes
  */
 export const buttonSizes = {
-  example: classnames.example,
   default: classnames.size.default,
   sm: classnames.size.sm,
   lg: classnames.size.lg,

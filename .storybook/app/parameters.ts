@@ -38,6 +38,7 @@ const themes = {
 const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: controls,
+  deepControls: { enabled: true },
   docs: docs,
   darkMode: darkMode,
   previewTabs: previewTabs,

@@ -11,7 +11,7 @@ const Dark = create({
   fontBase: '"system-ui", sans-serif',
   fontCode: "monospace",
 
-  appPreviewBg: "rgb(22, 32, 38)", // Preview BG (Stories & Docs)
+  appPreviewBg: "hsl(225, 25%, 12%)", // Preview BG (Stories & Docs)
 }) as ThemeVars;
 
 export default Dark;

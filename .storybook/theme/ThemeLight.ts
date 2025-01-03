@@ -11,7 +11,7 @@ const Light = create({
   fontBase: '"system-ui", sans-serif',
   fontCode: "monospace",
 
-  appPreviewBg: "rgb(250, 224, 219)", // Preview BG (Stories & Docs)
+  appPreviewBg: "hsl(11, 80%, 95%)", // Preview BG (Stories & Docs)
 }) as ThemeVars;
 
 export default Light;

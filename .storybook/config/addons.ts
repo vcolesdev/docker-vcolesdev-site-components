@@ -9,6 +9,7 @@ const addons = [
   "@storybook/manager-api",
   "@storybook/theming",
   "storybook-dark-mode",
+  "storybook-addon-deep-controls",
 ];
 
 export default addons;

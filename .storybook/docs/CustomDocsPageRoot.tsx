@@ -1,4 +1,5 @@
 import { DocsPage } from "@storybook/blocks";
+import React from "react";
 
 import CustomDocs from "./CustomDocs";
 

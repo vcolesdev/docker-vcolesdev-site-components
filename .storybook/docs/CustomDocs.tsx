@@ -1,6 +1,7 @@
 /* Docs.tsx */
 import { Controls, Description, Primary, Stories, Subtitle, Title } from "@storybook/blocks";
 import { useEffect, useRef } from "react";
+import React from "react";
 
 /**
  * Custom Docs component.

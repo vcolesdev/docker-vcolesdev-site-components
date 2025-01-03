@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 
 import { Eyebrow } from "./Eyebrow";
-import type { EyebrowApi } from "./Eyebrow";
+import type { EyebrowApi } from "./Eyebrow.api";
 
 const EyebrowArgs = {
   children: "Featured Stories",

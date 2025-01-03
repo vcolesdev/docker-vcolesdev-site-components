@@ -7,12 +7,4 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(
-  useGSAP,
-  ScrollTrigger,
-  Observer,
-  ScrollToPlugin,
-  MotionPathPlugin,
-  TextPlugin,
-  CustomEase
-);
+gsap.registerPlugin(useGSAP, ScrollTrigger, Observer, ScrollToPlugin, MotionPathPlugin, TextPlugin, CustomEase);

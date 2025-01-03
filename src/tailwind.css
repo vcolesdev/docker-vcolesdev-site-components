@@ -38,7 +38,7 @@
     --color-tropical-indigo-light: hsl(261, 100%, 89%);
     /* Charcoal Blue */
     --color-charcoal-blue: hsl(225, 28%, 17%);
-    --color-charcoal-blue-dark: hsl(225, 10%, 12%);
+    --color-charcoal-blue-dark: hsl(225, 25%, 10%);
     --color-charcoal-blue-light: hsl(225, 28%, 33%);
     /* Baby Blue */
     --color-baby-blue: hsl(200, 40%, 72%);
@@ -70,7 +70,7 @@
     /* Background Colors */
     --bg-color: var(--color-baby-pink);
     --bg-color-elevated: var(--color-baby-pink-light);
-    --bg-color-dark: var(--color-charcoal-blue);
+    --bg-color-dark: hsl(225, 25%, 12%);
     --bg-color-dark-elevated: var(--color-charcoal-blue-light);
 
     /* Text Colors */

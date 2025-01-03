@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-
 import { cn } from "@/src/utils/cn";
+import { useEffect, useState } from "react";
 
 type SpacerSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2x" | "3x" | "4x" | "5x";
 
