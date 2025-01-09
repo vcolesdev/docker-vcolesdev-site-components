@@ -2,15 +2,19 @@
   "compilerOptions": {
     /* Alias */
     "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": [".*"],
-      "@/assets/*": ["src/assets/*"],
-      "@/docs/*": ["stories/__docs__/*"],
-      "@/sbconfig/*": [".storybook/*"],
-      "@/src/*": ["src/*"],
-      "@/stories/*": ["stories/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/convex/*": ["./convex/*"],
+      "@/docs/*": ["./stories/__docs__/*"],
+      "@/sbconfig/*": ["./.storybook/*"],
+      "@/shadcn/*": ["./src/shadcn/*"],
+      "@/src/*": ["./src/*"],
+      "@/stories/*": ["./stories/*"],
     },
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strict": true,
   },
   "references": [
     { "path": "./tsconfig.app.json" },

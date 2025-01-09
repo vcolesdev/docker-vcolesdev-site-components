@@ -124,10 +124,12 @@ const elementFontSizes = {
 
 const baseFontFamilies = {
   body: ["var(--font-body)", "sans-serif"],
+  serif: ["var(--font-serif)", "serif"],
   button: ["var(--font-button)", "sans-serif"],
   heading: ["var(--font-heading)", "serif"],
   "heading-alt": ["var(--font-heading-alt)", "serif"],
   cursive: ["Playwrite AU NSW", "cursive"],
+  logo: ["Playwrite IE", "cursive"],
 };
 
 const transitionTimingFunc = {
@@ -156,39 +158,51 @@ const transitionTimingFunc = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./stories/**/*.stories.{ts,tsx}", "./stories/**/*.{ts,tsx}", "./stories/**/*.mdx"],
-  darkMode: "selector",
+  content: [
+    "./@/**/*.{ts,tsx}",
+    "./stories/**/*.stories.{ts,tsx}", 
+    "./stories/**/*.{ts,tsx}", 
+    "./stories/**/*.mdx"
+  ],
+  darkMode: ["selector"],
   theme: {
-    extend: {
-      borderRadius: { ...borderRadius },
-      borderWidth: { ...borderWidth },
-      boxShadowColor: {
+  	extend: {
+  		borderRadius: {
+        ...borderRadius,
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		borderWidth: {
+        ...borderWidth
+  		},
+  		boxShadowColor: {
         ...themeColors,
-        ...themeShadowColors,
-      },
-      colors: {
+        ...themeShadowColors
+  		},
+  		colors: {
         ...themeColors,
         ...themeStateColors,
         ...themeBgColors,
         ...themeTextColors,
         ...themeHeadingColors,
         ...themeActionColors,
-        ...themeGradientColorStops,
-      },
-      fontSize: {
+        ...themeGradientColorStops
+  		},
+  		fontSize: {
         ...themeFontSizes,
-        ...elementFontSizes,
-      },
-      fontFamily: {
-        ...baseFontFamilies,
-      },
-      screens: {
-        ...themeScreens,
-      },
-      transitionTimingFunction: {
-        ...transitionTimingFunc,
-      },
-    },
+        ...elementFontSizes
+  		},
+  		fontFamily: {
+        ...baseFontFamilies
+  		},
+  		screens: {
+        ...themeScreens
+  		},
+  		transitionTimingFunction: {
+        ...transitionTimingFunc
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
 };

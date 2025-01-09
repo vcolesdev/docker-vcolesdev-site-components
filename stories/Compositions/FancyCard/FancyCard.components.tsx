@@ -1,7 +1,7 @@
 import { cn } from "@/src/utils/cn";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 import { FancyCardApi } from "@/stories/Compositions/FancyCard/FancyCard.api";
 import { classnames } from "@/stories/Compositions/FancyCard/FancyCard.classes";
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
 import * as React from "react";
 
 /**

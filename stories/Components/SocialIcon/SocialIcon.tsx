@@ -1,10 +1,16 @@
 import { swatches } from "@/src/swatches";
 import { cn } from "@/src/utils/cn";
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 
+/**
+ * @interface SocialIconApi
+ */
 export interface SocialIconApi {}
 
-const classnames = {
+/**
+ * @const classnames
+ */
+export const classnames = {
   root: cn([
     "cursor-pointer",
     "relative",
@@ -26,6 +32,10 @@ const classnames = {
   ]),
 };
 
+/**
+ * SocialIcon
+ * @param props SocialIconApi
+ */
 export function SocialIcon(props: SocialIconApi) {
   return (
     <div className={classnames.root}>

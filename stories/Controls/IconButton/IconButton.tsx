@@ -1,6 +1,6 @@
+import { TablerIcon, TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import { ButtonApi } from "@/stories/Controls/Button/Button";
 import { Template } from "@/stories/Controls/Button/Button";
-import { TablerIcon, TablerIconName } from "@/stories/TablerIcon/TablerIcon";
 import * as React from "react";
 
 export interface IconButtonApi extends ButtonApi {

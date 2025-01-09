@@ -6,7 +6,7 @@ import {
   DEFAULT_ICON_SIZE,
   DEFAULT_ICON_STROKE,
 } from "@/stories/Typography/Eyebrow/Eyebrow.const";
-import { TablerIconName } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 
 /**
  * The position of the icon in the Eyebrow component.

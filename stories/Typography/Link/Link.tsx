@@ -1,5 +1,5 @@
 import { cn } from "@/src/utils/cn";
-import { TablerIcon, TablerIconName } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon, TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import * as React from "react";
 import { useEffect } from "react";
 

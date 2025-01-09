@@ -1,4 +1,4 @@
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 import type { EyebrowApi, EyebrowWithIconApi } from "@/stories/Typography/Eyebrow/Eyebrow.api";
 import { classnames } from "@/stories/Typography/Eyebrow/Eyebrow.classes";
 import * as React from "react";

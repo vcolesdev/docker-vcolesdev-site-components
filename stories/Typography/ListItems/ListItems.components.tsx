@@ -1,4 +1,4 @@
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 import type { ItemWithIconProps, ItemsProps, SingleItemProps } from "@/stories/Typography/ListItems/ListItems.api";
 import { classnames } from "@/stories/Typography/ListItems/ListItems.classes";
 import {

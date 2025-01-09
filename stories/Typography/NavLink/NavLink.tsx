@@ -1,4 +1,4 @@
-import type { TablerIconName } from "@/stories/TablerIcon/TablerIcon";
+import type { TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import { classnames } from "@/stories/Typography/NavLink/NavLink.classes";
 import { useNavLinkApi } from "@/stories/Typography/NavLink/use-nav-link-api";
 import { useNavLinkClasses } from "@/stories/Typography/NavLink/use-nav-link-classes";

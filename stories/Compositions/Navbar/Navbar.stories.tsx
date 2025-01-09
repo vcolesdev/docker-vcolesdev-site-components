@@ -1,6 +1,5 @@
 import type { NavbarApi } from "@/stories/Compositions/Navbar/Navbar";
 import { Navbar } from "@/stories/Compositions/Navbar/Navbar";
-import { NavLink } from "@/stories/Typography/NavLink/NavLink";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 
@@ -31,12 +30,4 @@ type Story = StoryObj<typeof Navbar>;
 // Default
 export const Default: Story = {
   render: (args) => <Navbar {...args} />,
-};
-
-// Navbar with Links
-export const Links: Story = {
-  name: "Navbar - Links",
-  render: (args) => {
-    return <Navbar />;
-  },
 };

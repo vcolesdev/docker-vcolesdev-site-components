@@ -1,7 +1,6 @@
-import { classnames } from "@/stories/Compositions/FeaturedSectionIntro/FeaturedSectionIntro.classes";
+import { TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import { Button, ButtonApi } from "@/stories/Controls/Button/Button";
 import { IconButton } from "@/stories/Controls/IconButton/IconButton";
-import { TablerIconName } from "@/stories/TablerIcon/TablerIcon";
 import { Eyebrow, EyebrowWithIcon } from "@/stories/Typography/Eyebrow/Eyebrow";
 import { EyebrowWithIconApi } from "@/stories/Typography/Eyebrow/Eyebrow.api";
 import { Heading } from "@/stories/Typography/Heading/Heading";
@@ -79,8 +78,8 @@ const FeaturedSectionIntroCta = (
   return hasIcon ? (
     <div className="mt-10">
       <IconButton
-        iconName={props.icon}
-        iconPos={props.iconPos}
+        iconName={props.icon || "IconBook"}
+        iconPos={props.iconPos || "end"}
         iconSize={32}
         size={props.size || "default"}
         variant={props.variant || "default"}
@@ -129,9 +128,13 @@ export function FeaturedSectionIntro(props: FeaturedSectionIntroApi) {
   return (
     <div>
       {props.hasEyebrow && props.hasEyebrowIcon ? (
-        <FeaturedSectionIntroEyebrow icon={props.eyebrowIcon} iconPos={props.eyebrowIconPos} text={props.eyebrowText} />
+        <FeaturedSectionIntroEyebrow
+          icon={props.eyebrowIcon}
+          iconPos={props.eyebrowIconPos}
+          text={props.eyebrowText || "Eyebrow"}
+        />
       ) : (
-        props.hasEyebrow && <FeaturedSectionIntroEyebrow text={props.eyebrowText} />
+        props.hasEyebrow && <FeaturedSectionIntroEyebrow text={props.eyebrowText || "Eyebrow"} />
       )}
       <Spacer size="xs" />
       <Heading level={3} size={props.titleSize || "lg"}>

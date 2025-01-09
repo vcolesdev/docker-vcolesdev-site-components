@@ -1,5 +1,5 @@
+import { TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import { ButtonApi } from "@/stories/Controls/Button/Button";
-import { TablerIconName } from "@/stories/TablerIcon/TablerIcon";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 

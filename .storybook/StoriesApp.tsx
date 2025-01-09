@@ -1,4 +1,5 @@
 import { ReactNode, useEffect } from "react";
+import * as React from "react";
 
 import useStoriesApp from "./hooks/app/useStoriesApp";
 
@@ -20,14 +21,13 @@ export default function StoriesApp({ children, isDarkTheme }: StoriesAppProps) {
 
   console.log("isDarkTheme", isDarkTheme);
 
+  const styles = {
+    //backgroundColor: globalStyles.bgColor,
+    color: globalStyles.textColor,
+  };
+
   return (
-    <div
-      className="stories-app"
-      style={{
-        //backgroundColor: globalStyles.bgColor,
-        color: globalStyles.textColor,
-      }}
-    >
+    <div className="stories-app" style={styles}>
       {children}
     </div>
   );

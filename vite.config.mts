@@ -22,10 +22,12 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./"),
       "@/assets": path.resolve(__dirname, "./src/assets"),
+      "@/convex": path.resolve(__dirname, "./convex"),
       "@/docs": path.resolve(__dirname, "./stories/__docs__"),
+      "@/shadcn": path.resolve(__dirname, "./src/shadcn"),
       "@/sbconfig": path.resolve(__dirname, "./.storybook"),
       "@/src": path.resolve(__dirname, "./src"),
       "@/stories": path.resolve(__dirname, "./stories"),
     },
-  },
+  }
 });

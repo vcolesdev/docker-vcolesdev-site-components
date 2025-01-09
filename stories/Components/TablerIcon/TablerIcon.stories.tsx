@@ -1,4 +1,4 @@
-import { TablerIcon, TablerIconApi } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon, TablerIconApi } from "@/stories/Components/TablerIcon/TablerIcon";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
 

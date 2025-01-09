@@ -71,17 +71,18 @@
     --bg-color: var(--color-baby-pink);
     --bg-color-elevated: var(--color-baby-pink-light);
     --bg-color-dark: hsl(225, 25%, 12%);
-    --bg-color-dark-elevated: var(--color-charcoal-blue-light);
+    --bg-color-dark-elevated: hsl(225, 25%, 15%);
 
     /* Text Colors */
-    --text-color: var(--color-tree-bark);
+    --text-color: hsl(11, 5%, 35%);
     --text-color-muted: hsl(11, 10%, 35%);
-    --text-color-dark: hsl(258, 26%, 85%);
+    --text-color-dark: hsl(258, 15%, 70%);
     --text-color-dark-muted: hsl(200, 20%, 50%);
 
     /* Fonts */
     --font-body: "Reddit Sans", sans-serif;
     --font-button: "Reddit Sans", sans-serif;
+    --font-serif: "Platypi", sans-serif;
     --font-heading: "Platypi", sans-serif;
     --font-heading-alt: "Anek Tamil", sans-serif;
     --font-cursive: "Playwrite AU NSW", cursive, serif;
@@ -116,6 +117,7 @@
 
     /* Border Width */
     --border-width-button: "1.5px";
+    --radius: 0.5rem;
   }
 }
 

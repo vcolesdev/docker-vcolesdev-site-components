@@ -1,0 +1,177 @@
+import { cn } from "@/src/utils/cn";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
+import { useEffect, useMemo, useState } from "react";
+import * as React from "react";
+
+/**
+ * @interface ThemeChangerApi
+ */
+export interface ThemeChangerApi {}
+
+/**
+ * @hook useThemeChanger
+ */
+export function useThemeChanger() {
+  const initTheme = handleInitTheme();
+
+  const [currentTheme, setCurrentTheme] = useState<"light" | "dark">(initTheme);
+
+  useEffect(() => {}, [currentTheme]);
+
+  /**
+   * handleInitTheme
+   */
+  function handleInitTheme(): "light" | "dark" {
+    const localSbTheme = handleLocalStorageStorybookTheme();
+    const systemTheme = handleDetectCurrentTheme();
+
+    if (localSbTheme) {
+      return localSbTheme;
+    } else {
+      return systemTheme;
+    }
+  }
+
+  /**
+   * handleLocalStorageStorybookTheme
+   */
+  function handleLocalStorageStorybookTheme() {
+    const storageItem = localStorage.getItem("sb-addon-themes-3");
+    if (!storageItem) {
+      console.log("No Local Storage Theme");
+      return;
+    }
+    const data = JSON.parse(storageItem);
+    console.log("Local Storage Theme: ", data["current"]);
+    return data["current"];
+  }
+
+  /**
+   * handleDetectCurrentTheme
+   */
+  function handleDetectCurrentTheme() {
+    let currentSystemTheme: "light" | "dark";
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (prefersDarkScheme) {
+      currentSystemTheme = "dark";
+    } else {
+      currentSystemTheme = "light";
+    }
+
+    return currentSystemTheme;
+  }
+
+  /**
+   * switchLightMode
+   */
+  function handleSwitchLightTheme(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const target = event.currentTarget;
+    setCurrentTheme("light");
+    console.log("Switched to Light Mode", target);
+    console.log("Current Theme: ", currentTheme);
+
+    // If storybook
+    const storybookAddonThemes = localStorage.getItem("sb-addon-themes-3");
+    if (storybookAddonThemes) {
+      localStorage.setItem("sb-addon-themes-3", JSON.stringify({ current: "light" }));
+      console.log("Local Storage Theme: ", JSON.parse(storybookAddonThemes).current);
+    }
+
+    return currentTheme;
+  }
+
+  /**
+   * switchDarkMode
+   */
+  function handleSwitchDarkTheme(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const target = event.currentTarget;
+    setCurrentTheme("dark");
+    console.log("Switched to Dark Mode", target);
+    console.log("Current Theme: ", currentTheme);
+
+    // If storybook
+    const storybookAddonThemes = localStorage.getItem("sb-addon-themes-3");
+    if (storybookAddonThemes) {
+      localStorage.setItem("sb-addon-themes-3", JSON.stringify({ current: "dark" }));
+      console.log("Local Storage Theme: ", JSON.parse(storybookAddonThemes).current);
+    }
+
+    return currentTheme;
+  }
+
+  /**
+   * switchSystemMode
+   */
+  function handleSwitchSystemTheme(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const target = event.currentTarget;
+    console.log("Switched to System Preference", target);
+
+    handleDetectCurrentTheme();
+  }
+
+  return {
+    fn: {
+      handleSwitchLightTheme,
+      handleSwitchDarkTheme,
+      handleSwitchSystemTheme,
+    },
+  };
+}
+
+/**
+ * @const classnames
+ */
+export const classnames = {
+  root: cn(
+    "inline-flex",
+    "items-center",
+    "rounded-[12px]",
+    "p-1",
+    "bg-[hsla(11,75%,87%,0.9)]",
+    "dark:bg-charcoal-blue-light"
+  ),
+  button: {
+    default: cn(["inline-block", "cursor-pointer", "rounded-lg", "p-2", "text-tree-bark", "dark:text-white"]),
+    selected: cn([]),
+  },
+};
+
+/**
+ * ThemeChanger
+ */
+export function ThemeChanger() {
+  const { fn } = useThemeChanger();
+
+  return (
+    <div className={classnames.root}>
+      <button
+        className={classnames.button.default}
+        id="btnSwitchLightTheme"
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => fn.handleSwitchLightTheme(e)}
+        type="button"
+      >
+        <TablerIcon color="currentColor" currentIcon="IconSun" size={20} stroke={2} />
+        <span className="sr-only">Switch Light Theme</span>
+      </button>
+      <button
+        className={classnames.button.default}
+        id="btnSwitchDarkTheme"
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => fn.handleSwitchDarkTheme(e)}
+        type="button"
+      >
+        <TablerIcon color="currentColor" currentIcon="IconMoon" size={20} stroke={2} />
+        <span className="sr-only">Switch Dark Theme</span>
+      </button>
+      <button
+        className={classnames.button.default}
+        id="btnSwitchSystemTheme"
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => fn.handleSwitchSystemTheme(e)}
+        type="button"
+      >
+        <TablerIcon color="currentColor" currentIcon="IconDevices" size={20} stroke={2} />
+        <span className="sr-only">Switch System Theme</span>
+      </button>
+    </div>
+  );
+}

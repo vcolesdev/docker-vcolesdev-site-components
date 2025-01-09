@@ -1,42 +1,51 @@
 {
   "compilerOptions": {
+    //"noEmit": true,
     "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "lib-core": {
-      "architect": {
-        "build": {
-          "options": {
-            "tsConfig": "tsconfig.app.json"
-          }
-        }
-      }
-    },
     "module": "ESNext",
     "skipLibCheck": true,
-
+    "target": "ES2020",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "useDefineForClassFields": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
+    "emitDeclarationOnly": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
-
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     /* Linting */
-    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    /* Files */
-    "files": [
-      "./src/**/*.(ts|tsx)",
-      "./stories/**/*.(ts|tsx)",
-    ],
+    "strict": true,
+    /* Alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [".*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/convex/*": ["./convex/*"],
+      "@/docs/*": ["./stories/__docs__/*"],
+      "@/sbconfig/*": ["./.storybook/*"],
+      "@/shadcn/*": ["./src/shadcn/*"],
+      "@/src/*": ["./src/*"],
+      "@/stories/*": ["./stories/*"],
+    }
   },
-  "include": ["./*"],
+  "lib-core": {
+    "architect": {
+      "build": {
+        "options": {
+          "tsConfig": "tsconfig.app.json"
+        }
+      }
+    }
+  },
+  "include": [
+    "./*", 
+    "./vite-env.d.ts"
+  ],
   "exclude": ["node_modules", "dist", "coverage", "tmp"]
 }

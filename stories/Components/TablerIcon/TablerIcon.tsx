@@ -1,4 +1,4 @@
-import { TabIcons } from "@/stories/TablerIcon/icons";
+import { TabIcons } from "@/stories/Components/TablerIcon/icons";
 import * as React from "react";
 import { ForwardedRef, Suspense, forwardRef, lazy, useEffect, useState } from "react";
 
@@ -51,8 +51,8 @@ export const DEFAULT_TABLER_TITLE = "";
  * @param props
  */
 export function Template({ currentIcon, ...props }: TablerIconApi) {
-  const icon = currentIcon.toString();
-  const importString = import(`../../node_modules/@tabler/icons-react/dist/esm/icons/${icon}.mjs`);
+  const icon = currentIcon?.toString() as TablerIconName;
+  const importString = import(`../../../node_modules/@tabler/icons-react/dist/esm/icons/${icon}.mjs`);
 
   const DynamicIcon = lazy(() => importString);
   return (

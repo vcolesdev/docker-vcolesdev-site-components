@@ -1,4 +1,4 @@
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 import { NavLinkApi } from "@/stories/Typography/NavLink/NavLink";
 import { classnames } from "@/stories/Typography/NavLink/NavLink.classes";
 import * as React from "react";

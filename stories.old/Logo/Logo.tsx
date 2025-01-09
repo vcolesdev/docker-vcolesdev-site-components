@@ -2,11 +2,11 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { useEffect, useState } from "react";
 
-interface LogoApi {
+export interface LogoApi {
   size: "sm" | "md" | "lg";
 }
 
-function Logo({ size }: LogoApi) {
+export function Logo({ size }: LogoApi) {
   const mm = gsap.matchMedia();
 
   const [logoSize, setLogoSize] = useState<LogoApi["size"] | "md">("md");
@@ -33,5 +33,3 @@ function Logo({ size }: LogoApi) {
     </div>
   );
 }
-
-export { Logo };

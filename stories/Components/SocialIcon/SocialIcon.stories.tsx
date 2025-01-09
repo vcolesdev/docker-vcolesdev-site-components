@@ -1,7 +1,7 @@
+import type { SocialIconApi } from "@/stories/Components/SocialIcon/SocialIcon";
+import { SocialIcon } from "@/stories/Components/SocialIcon/SocialIcon";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as React from "react";
-
-import { SocialIcon, SocialIconApi } from "./SocialIcon";
 
 const SocialIconArgs = {} as SocialIconApi;
 

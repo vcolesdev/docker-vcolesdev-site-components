@@ -1,6 +1,6 @@
+import { TablerIcon } from "@/stories/Components/TablerIcon/TablerIcon";
 import type { FeaturedPostApi } from "@/stories/Compositions/FeaturedPost/FeaturedPost.api";
 import { classnames } from "@/stories/Compositions/FeaturedPost/FeaturedPost.classes";
-import { TablerIcon } from "@/stories/TablerIcon/TablerIcon";
 
 /**
  * FeaturedPostFooter
