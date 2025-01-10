@@ -22,7 +22,7 @@ const borderWidth = {
 
 const themeShadowColors = {
   "theme-light": "rgba(243,24,32,0.1)",
-  "theme-dark": "rgb(12,20,24,0.3)",
+  "theme-dark": "rgba(12,20,24,0.3)",
 };
 
 const themeColors = {
@@ -129,7 +129,7 @@ const baseFontFamilies = {
   heading: ["var(--font-heading)", "serif"],
   "heading-alt": ["var(--font-heading-alt)", "serif"],
   cursive: ["Playwrite AU NSW", "cursive"],
-  logo: ["Playwrite IE", "cursive"],
+  logo: ["var(--font-heading-alt)", "cursive"],
 };
 
 const transitionTimingFunc = {

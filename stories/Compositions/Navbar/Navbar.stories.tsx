@@ -15,7 +15,7 @@ const meta: Meta<typeof Navbar> = {
   },
   decorators: [
     (Story) => (
-      <div className="p-8">
+      <div className="p-1">
         <Story />
       </div>
     ),

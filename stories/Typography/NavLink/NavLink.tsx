@@ -1,7 +1,7 @@
+import { cn } from "@/src/utils/cn";
 import type { TablerIconName } from "@/stories/Components/TablerIcon/TablerIcon";
 import { classnames } from "@/stories/Typography/NavLink/NavLink.classes";
 import { useNavLinkApi } from "@/stories/Typography/NavLink/use-nav-link-api";
-import { useNavLinkClasses } from "@/stories/Typography/NavLink/use-nav-link-classes";
 import * as React from "react";
 
 /**
@@ -24,7 +24,12 @@ export interface NavLinkApi {
 export function NavLink(props: NavLinkApi) {
   const { children, href, id } = props;
   const { icon, fn, state } = useNavLinkApi(props);
-  const { linkClasses } = useNavLinkClasses();
+
+  const linkClasses = cn([classnames.anchor]);
+  const activeClasses = cn({
+    [classnames.states.active]: state.isNavLinkActive,
+    [classnames.states.inactive]: !state.isNavLinkActive,
+  });
 
   return (
     <div className={classnames.base} id={id}>
